@@ -1,0 +1,11 @@
+{
+  "name": "Ultra Implantes — Central de Inteligência",
+  "short_name": "Ultra Central",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#f6f7f9",
+  "theme_color": "#ff6a00",
+  "icons": [
+    {"src":"assets/ultra-icon.png","sizes":"512x512","type":"image/png"}
+  ]
+}
