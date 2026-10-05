@@ -1,145 +1,120 @@
 <!doctype html>
 <html lang="pt-BR">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <meta name="theme-color" content="#ff6a00" />
-  <meta name="description" content="Central de Inteligência Comercial da Ultra Implantes" />
-  <link rel="icon" href="assets/ultra-icon.png" />
-  <link rel="manifest" href="manifest.webmanifest" />
-  <link rel="stylesheet" href="styles.css" />
-  <title>Ultra Implantes — Central de Inteligência</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#f56a14">
+  <meta name="description" content="ULTRA BASE — inteligência de atendimento da Ultra Implantes">
+  <link rel="icon" href="assets/ultra-icon.png">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="stylesheet" href="styles.css">
+  <title>ULTRA BASE</title>
 </head>
 <body>
   <a class="skip-link" href="#main">Pular para o conteúdo</a>
   <div class="app-shell">
-    <aside class="sidebar" id="sidebar" aria-label="Navegação principal">
-      <div class="brand-wrap">
-        <img class="brand-logo" src="assets/ultra-logo.png" alt="Ultra Implantes" />
-        <div class="brand-sub">Central de Inteligência</div>
+    <aside class="sidebar" aria-label="Navegação principal">
+      <div class="brand">
+        <img src="assets/ultra-logo.png" alt="Ultra Implantes">
+        <span>ULTRA BASE</span>
+        <small>Inteligência de atendimento</small>
       </div>
-      <nav class="nav">
-        <button class="nav-item active" data-view="central"><span class="nav-icon">⌂</span><span>Central</span></button>
-        <button class="nav-item" data-view="copiloto"><span class="nav-icon">✦</span><span>Copiloto</span></button>
-        <button class="nav-item" data-view="biblioteca"><span class="nav-icon">☰</span><span>Biblioteca</span></button>
-        <button class="nav-item" data-view="importar"><span class="nav-icon">⇩</span><span>Importar RD</span></button>
-        <button class="nav-item" data-view="gestao"><span class="nav-icon">◎</span><span>Gestão · Milena</span></button>
-        <button class="nav-item" data-view="treinamento"><span class="nav-icon">◈</span><span>Treinamento</span></button>
+      <nav class="nav" id="nav">
+        <button class="nav-btn active" data-view="copiloto"><span>✦</span><b>Copiloto</b></button>
+        <button class="nav-btn" data-view="inteligencia"><span>◎</span><b>Inteligência</b></button>
+        <button class="nav-btn" data-view="milena"><span>↗</span><b>Milena</b></button>
+        <button class="nav-btn" data-view="base"><span>⌕</span><b>Base</b></button>
       </nav>
-      <div class="side-footer">
-        <img src="assets/rd-conversas.png" alt="RD Station Conversas" />
-        <p>RD como infraestrutura. Experiência Ultra.</p>
+      <div class="sidebar-note">
+        <strong>Método ULTRA</strong>
+        <p>Pessoa → decisão → continuidade → aprendizado.</p>
       </div>
     </aside>
 
-    <main class="main" id="main">
+    <main id="main" class="main">
       <header class="topbar">
-        <button class="icon-btn mobile-only" id="menuBtn" aria-label="Abrir menu">☰</button>
-        <div class="title-wrap"><div class="eyebrow">ULTRA IMPLANTES</div><h1 id="pageTitle">Central</h1></div>
-        <div class="top-actions">
-          <span class="status-pill" id="connectionStatus"><span class="dot"></span> Local · online</span>
-          <button class="icon-btn" id="themeBtn" title="Alternar tema" aria-label="Alternar tema">◐</button>
-          <button class="avatar-btn" id="settingsBtn" title="Dados e configurações" aria-label="Abrir dados e configurações">UI</button>
+        <button id="menuBtn" class="mobile-menu" aria-label="Abrir menu">☰</button>
+        <div>
+          <div class="eyebrow">ULTRA IMPLANTES</div>
+          <h1 id="pageTitle">Copiloto</h1>
+        </div>
+        <div class="top-status" title="Esta versão armazena os testes localmente neste navegador">
+          <i></i><span>Base local ativa</span>
         </div>
       </header>
 
-      <section class="view active" id="view-central">
-        <div class="hero card soft">
-          <div><div class="eyebrow orange">VISÃO EXECUTIVA</div><h2>O que exige atenção agora?</h2><p>Uma leitura clara da operação para agir antes que o lead esfrie. Dados, contexto e próximo passo em uma única tela.</p></div>
-          <div class="hero-mark"><img src="assets/ultra-icon.png" alt="" /></div>
+      <section class="view active" id="view-copiloto">
+        <div class="hero compact">
+          <div>
+            <span class="eyebrow orange">MÉTODO ULTRA</span>
+            <h2>Entenda a pessoa antes de conduzir a conversa.</h2>
+            <p>Escreva ou cole a fala do paciente. A ULTRA BASE identifica intenção, contexto, barreira e o próximo passo mais útil.</p>
+          </div>
         </div>
-        <div class="kpi-grid">
-          <article class="kpi"><span>Tarefas</span><strong id="kpiTotal">—</strong><small>última importação</small></article>
-          <article class="kpi"><span>Concluídas</span><strong id="kpiDone">—</strong><small>status registrado</small></article>
-          <article class="kpi alert"><span>Atrasadas</span><strong id="kpiLate">—</strong><small>ação necessária</small></article>
-          <article class="kpi"><span>Sem descrição</span><strong id="kpiNoDesc">—</strong><small>qualidade de registro</small></article>
-          <article class="kpi"><span>Sem responsável</span><strong id="kpiNoOwner">—</strong><small>risco operacional</small></article>
-        </div>
-        <div class="dashboard-grid">
-          <article class="card span-2">
-            <div class="section-head"><div><span class="eyebrow">AÇÃO AGORA</span><h3>Fila de prioridades</h3></div><button class="text-btn" data-go="importar">Atualizar dados</button></div>
-            <div id="actionNow" class="empty-state">Importe um relatório do RD para montar a fila.</div>
-          </article>
-          <article class="card">
-            <div class="section-head"><div><span class="eyebrow">QUALIDADE</span><h3>Saúde do CRM</h3></div></div>
-            <div id="qualityList" class="metric-list"></div>
-          </article>
-          <article class="card">
-            <div class="section-head"><div><span class="eyebrow">DISTRIBUIÇÃO</span><h3>Famílias operacionais</h3></div></div>
-            <div id="familyBars" class="bar-list"></div>
-          </article>
-        </div>
-      </section>
 
-      <section class="view" id="view-copiloto">
-        <div class="copilot-layout">
-          <article class="card input-card">
-            <div class="eyebrow orange">COPILOTO DE ATENDIMENTO</div>
-            <h2>Leia a fala. Entenda a pessoa.</h2>
-            <p class="muted">Cole apenas o contexto necessário. O copiloto identifica o cenário, evita repetição e preserva os limites clínicos.</p>
-            <textarea id="patientText" rows="8" placeholder="Ex.: Me falaram que eu não tenho osso e que só um implante diferente resolveria..."></textarea>
-            <div class="input-row"><input id="patientName" placeholder="Primeiro nome (opcional)"/><input id="agentName" placeholder="Atendente (opcional)"/></div>
-            <div class="button-row"><button class="primary" id="analyzeBtn">Analisar conversa</button><button class="secondary" id="clearCopilot">Limpar</button></div>
-            <div class="privacy-note">Não cole CPF, RG, exames completos ou outros dados sensíveis.</div>
+        <div class="copilot-grid">
+          <article class="panel input-panel">
+            <label for="patientText">O que o paciente disse?</label>
+            <textarea id="patientText" rows="8" placeholder="Ex.: tenho 72 anos, uso dentadura e me falaram que não tenho osso..."></textarea>
+            <div class="mini-grid">
+              <div><label for="patientName">Primeiro nome <span>opcional</span></label><input id="patientName" autocomplete="off"></div>
+              <div><label for="agentName">Atendente <span>opcional</span></label><input id="agentName" autocomplete="off"></div>
+            </div>
+            <button class="primary full" id="analyzeBtn">Gerar orientação</button>
+            <div class="quick-examples" aria-label="Exemplos rápidos">
+              <button data-example="Quanto custa um implante?">Preço</button>
+              <button data-example="Me falaram que eu não tenho osso">Pouco osso</button>
+              <button data-example="Tenho muito medo da cirurgia">Medo</button>
+              <button data-example="Qual o endereço de vocês?">Endereço</button>
+            </div>
+            <p class="privacy">Use só o contexto necessário. Não cole CPF, documentos, exames completos ou dados sensíveis identificáveis.</p>
           </article>
-          <article class="card result-card" id="copilotResult">
-            <div class="empty-state tall"><div class="big-icon">✦</div><strong>Pronta para pensar junto.</strong><span>Conhecimento forte por dentro. Conversa humana por fora.</span></div>
+
+          <article class="panel result-panel" id="copilotResult" aria-live="polite">
+            <div class="empty-state">
+              <div class="spark">✦</div>
+              <strong>Pronta para orientar.</strong>
+              <p>Resposta clara por fora. Contexto, lógica e segurança por dentro.</p>
+            </div>
           </article>
         </div>
       </section>
 
-      <section class="view" id="view-biblioteca">
-        <div class="section-head page-head"><div><span class="eyebrow orange">BASE MESTRE</span><h2>Biblioteca de cenários</h2><p class="muted">Respostas, perguntas, limites e registros já estruturados.</p></div><input class="search" id="librarySearch" placeholder="Buscar preço, medo, osso..." /></div>
-        <div class="chips" id="categoryChips"></div>
-        <div class="scenario-grid" id="scenarioGrid"></div>
-      </section>
-
-      <section class="view" id="view-importar">
-        <div class="section-head page-head"><div><span class="eyebrow orange">RD CRM</span><h2>Importar relatório</h2><p class="muted">Importação segura, mapeamento de colunas, validação e histórico local.</p></div><button class="secondary" id="downloadTemplate">Baixar modelo de colunas</button></div>
-        <div class="wizard-steps"><span class="active" data-step-pill="1">1 Arquivo</span><span data-step-pill="2">2 Mapear</span><span data-step-pill="3">3 Revisar</span><span data-step-pill="4">4 Analisar</span></div>
-        <div id="importWizard"></div>
-      </section>
-
-      <section class="view" id="view-gestao">
-        <div class="section-head page-head"><div><span class="eyebrow orange">GESTÃO</span><h2>Painel da Milena</h2><p class="muted">Visão operacional sem confundir volume com performance.</p></div><button class="secondary" id="exportReportBtn">Exportar análise</button></div>
-        <div class="tabs"><button class="tab active" data-panel="hoje">Hoje</button><button class="tab" data-panel="atencao">Atenção</button><button class="tab" data-panel="equipe">Equipe</button><button class="tab" data-panel="evolucao">Evolução</button></div>
-        <div id="managementPanel" class="card"></div>
-      </section>
-
-      <section class="view" id="view-treinamento">
-        <div class="section-head page-head"><div><span class="eyebrow orange">TREINAMENTO</span><h2>Aprender com a operação</h2><p class="muted">Transformar falha de processo em padrão melhor de atendimento.</p></div></div>
-        <div class="training-grid">
-          <article class="card"><span class="eyebrow">PADRÃO OURO</span><h3>Acolher → explicar → limitar → avançar</h3><p>Reconhecer o contexto, explicar sem despejar informação, proteger o limite clínico e deixar um próximo passo simples.</p></article>
-          <article class="card"><span class="eyebrow">REGISTRO</span><h3>Contexto + barreira + combinado</h3><p>Quem assumir a conversa depois precisa continuar de onde parou, sem pedir ao paciente que conte tudo de novo.</p></article>
-          <article class="card"><span class="eyebrow">NÃO FAZER</span><h3>Resposta de robô</h3><p>Evitar “só na avaliação”, pressão por agenda, promessas, frases decoradas e follow-up que ignora o histórico.</p></article>
+      <section class="view" id="view-inteligencia">
+        <div class="page-intro">
+          <div><span class="eyebrow orange">CONVERSAS</span><h2>O que a equipe está dizendo — e o que isso está ensinando.</h2><p>Aqui entram padrões de linguagem, respostas repetidas, objeções e sinais de melhoria. Sem recriar o RD.</p></div>
+          <label class="upload-btn">Importar conversas <input id="conversationFile" type="file" accept=".csv,text/csv" hidden></label>
         </div>
-        <article class="card human-rule"><h3>Regra mestre</h3><blockquote id="humanRule"></blockquote></article>
+        <div class="insight-grid" id="intelligenceGrid"></div>
+        <article class="panel" id="importHelp">
+          <div class="section-head"><div><span class="eyebrow">IMPORTAÇÃO OPCIONAL</span><h3>Use um CSV de conversas quando tiver.</h3></div></div>
+          <p class="muted">A ULTRA BASE tenta reconhecer colunas de mensagem, atendente, autor e data. Se o arquivo não tiver essas informações, ela não inventa.</p>
+        </article>
+      </section>
+
+      <section class="view" id="view-milena">
+        <div class="page-intro">
+          <div><span class="eyebrow orange">GESTÃO</span><h2>Milena precisa saber onde olhar — não receber mais um relatório.</h2><p>O painel resume apenas padrões úteis para coaching e melhoria do atendimento.</p></div>
+        </div>
+        <div id="milenaPanel"></div>
+      </section>
+
+      <section class="view" id="view-base">
+        <div class="page-intro base-head">
+          <div><span class="eyebrow orange">CONHECIMENTO</span><h2>Base ULTRA</h2><p>Fatos oficiais, dúvidas frequentes e cenários já estruturados.</p></div>
+          <input id="baseSearch" class="search" placeholder="Buscar: preço, medo, endereço, prótese...">
+        </div>
+        <div class="base-tabs" role="tablist">
+          <button class="base-tab active" data-base="facts">Fatos da Ultra</button>
+          <button class="base-tab" data-base="faq">Perguntas frequentes</button>
+          <button class="base-tab" data-base="scenarios">Cenários</button>
+        </div>
+        <div id="baseContent"></div>
       </section>
     </main>
   </div>
 
-  <nav class="mobile-nav" aria-label="Navegação móvel">
-    <button data-view="central" class="active">⌂<span>Central</span></button>
-    <button data-view="copiloto">✦<span>Copiloto</span></button>
-    <button data-view="importar">⇩<span>Importar</span></button>
-    <button data-view="gestao">◎<span>Gestão</span></button>
-  </nav>
-
-  <div class="scrim" id="scrim"></div>
-  <aside class="drawer" id="settingsDrawer" aria-hidden="true">
-    <div class="drawer-head"><div><span class="eyebrow">DADOS & SISTEMA</span><h3>Configurações</h3></div><button class="icon-btn" id="closeSettings">×</button></div>
-    <div class="drawer-body">
-      <div class="settings-block"><strong>Modo atual</strong><p>Aplicação estática local-first. Indicada para protótipo e operação sem dados sensíveis persistentes em servidor.</p></div>
-      <div class="settings-block"><strong>Histórico de importações</strong><div id="importHistory" class="history-list"></div></div>
-      <div class="settings-block"><strong>Backup local</strong><div class="button-row stack"><button class="secondary" id="backupBtn">Baixar backup</button><label class="secondary file-label">Restaurar backup<input type="file" id="restoreInput" accept="application/json" hidden></label><button class="danger-btn" id="clearDataBtn">Apagar dados locais</button></div></div>
-      <div class="privacy-panel" id="privacyText"></div>
-    </div>
-  </aside>
-
-  <div class="toast-wrap" id="toastWrap" aria-live="polite"></div>
-
-  <script src="config.js"></script>
-  <script src="scenarios.js"></script>
+  <div class="toast" id="toast" role="status"></div>
   <script type="module" src="app.js"></script>
 </body>
 </html>
