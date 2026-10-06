@@ -4,11 +4,11 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
   <meta name="theme-color" content="#f56a14">
-  <meta name="description" content="ULTRA BASE — inteligência de atendimento da Ultra Implantes">
+  <meta name="description" content="ULTRA BASE — Método ULTRA para atendimento, inteligência e gestão de conversas">
   <link rel="icon" href="assets/ultra-icon.png">
   <link rel="manifest" href="manifest.webmanifest">
   <link rel="stylesheet" href="styles.css">
-  <title>ULTRA BASE</title>
+  <title>ULTRA BASE v5</title>
 </head>
 <body>
   <a class="skip-link" href="#main">Pular para o conteúdo</a>
@@ -17,7 +17,7 @@
       <div class="brand">
         <img src="assets/ultra-logo.png" alt="Ultra Implantes">
         <span>ULTRA BASE</span>
-        <small>Inteligência de atendimento</small>
+        <small>Método ULTRA · v5</small>
       </div>
       <nav class="nav" id="nav">
         <button class="nav-btn active" data-view="copiloto"><span>✦</span><b>Copiloto</b></button>
@@ -27,81 +27,81 @@
       </nav>
       <div class="sidebar-note">
         <strong>Método ULTRA</strong>
-        <p>Pessoa → decisão → continuidade → aprendizado.</p>
+        <p>Entender → responder → conduzir → aprender.</p>
       </div>
     </aside>
 
     <main id="main" class="main">
       <header class="topbar">
         <button id="menuBtn" class="mobile-menu" aria-label="Abrir menu">☰</button>
-        <div>
-          <div class="eyebrow">ULTRA IMPLANTES</div>
-          <h1 id="pageTitle">Copiloto</h1>
-        </div>
-        <div class="top-status" title="Esta versão armazena os testes localmente neste navegador">
-          <i></i><span>Base local ativa</span>
+        <div><div class="eyebrow">ULTRA IMPLANTES</div><h1 id="pageTitle">Copiloto</h1></div>
+        <div class="top-actions">
+          <button class="ghost small" id="newConversationBtn" title="Limpa apenas a memória desta conversa">Nova conversa</button>
+          <div class="top-status"><i></i><span>Memória da sessão ativa</span></div>
         </div>
       </header>
 
       <section class="view active" id="view-copiloto">
-        <div class="hero compact">
+        <div class="page-intro hero-intro">
           <div>
-            <span class="eyebrow orange">MÉTODO ULTRA</span>
-            <h2>Entenda a pessoa antes de conduzir a conversa.</h2>
-            <p>Escreva ou cole a fala do paciente. A ULTRA BASE identifica intenção, contexto, barreira e o próximo passo mais útil.</p>
+            <span class="eyebrow orange">COPILOTO SÊNIOR</span>
+            <h2>Responda a pessoa certa. No momento certo.</h2>
+            <p>A ULTRA BASE identifica quem está falando, o que é fato, o que ainda é hipótese e qual é a próxima melhor ação.</p>
           </div>
+          <div class="principle-card"><span>REGRA</span><strong>Responder antes de perguntar quando a informação já é conhecida.</strong></div>
         </div>
 
         <div class="copilot-grid">
           <article class="panel input-panel">
-            <label for="patientText">O que o paciente disse?</label>
-            <textarea id="patientText" rows="8" placeholder="Ex.: tenho 72 anos, uso dentadura e me falaram que não tenho osso..."></textarea>
+            <label for="patientText">O que a pessoa disse?</label>
+            <textarea id="patientText" rows="8" placeholder="Ex.: meu tio precisa colocar um dente / vcs atendem convênio? / tenho medo de anestesia"></textarea>
             <div class="mini-grid">
               <div><label for="patientName">Primeiro nome <span>opcional</span></label><input id="patientName" autocomplete="off"></div>
               <div><label for="agentName">Atendente <span>opcional</span></label><input id="agentName" autocomplete="off"></div>
             </div>
             <button class="primary full" id="analyzeBtn">Gerar orientação</button>
             <div class="quick-examples" aria-label="Exemplos rápidos">
-              <button data-example="Quanto custa um implante?">Preço</button>
-              <button data-example="Me falaram que eu não tenho osso">Pouco osso</button>
-              <button data-example="Tenho muito medo da cirurgia">Medo</button>
-              <button data-example="Qual o endereço de vocês?">Endereço</button>
+              <button data-example="vcs atendem convenio?">Convênio</button>
+              <button data-example="meu tio precisa colocar um dente">Familiar</button>
+              <button data-example="Me falaram que eu não tenho oço">Pouco osso</button>
+              <button data-example="quero marcar avaliacao">Agendar</button>
             </div>
-            <p class="privacy">Use só o contexto necessário. Não cole CPF, documentos, exames completos ou dados sensíveis identificáveis.</p>
+            <p class="privacy">Use somente o contexto necessário. Não cole CPF, documentos, exames completos ou dados sensíveis identificáveis.</p>
           </article>
 
           <article class="panel result-panel" id="copilotResult" aria-live="polite">
-            <div class="empty-state">
-              <div class="spark">✦</div>
-              <strong>Pronta para orientar.</strong>
-              <p>Resposta clara por fora. Contexto, lógica e segurança por dentro.</p>
-            </div>
+            <div class="empty-state"><div class="spark">✦</div><strong>Pronta para orientar.</strong><p>Respostas curtas por fora. Contexto, segurança e lógica por dentro.</p></div>
           </article>
         </div>
       </section>
 
       <section class="view" id="view-inteligencia">
         <div class="page-intro">
-          <div><span class="eyebrow orange">CONVERSAS</span><h2>O que a equipe está dizendo — e o que isso está ensinando.</h2><p>Aqui entram padrões de linguagem, respostas repetidas, objeções e sinais de melhoria. Sem recriar o RD.</p></div>
+          <div><span class="eyebrow orange">CONVERSAS</span><h2>Inteligência que complementa o RD.</h2><p>Encontre padrões de linguagem, respostas repetidas, objeções e oportunidades de treinamento sem recriar o CRM.</p></div>
           <label class="upload-btn">Importar conversas <input id="conversationFile" type="file" accept=".csv,text/csv" hidden></label>
         </div>
         <div class="insight-grid" id="intelligenceGrid"></div>
         <article class="panel" id="importHelp">
           <div class="section-head"><div><span class="eyebrow">IMPORTAÇÃO OPCIONAL</span><h3>Use um CSV de conversas quando tiver.</h3></div></div>
-          <p class="muted">A ULTRA BASE tenta reconhecer colunas de mensagem, atendente, autor e data. Se o arquivo não tiver essas informações, ela não inventa.</p>
+          <p class="muted">A base tenta reconhecer mensagem, atendente, autor e data. Se o arquivo não trouxer uma informação, ela não cria uma conclusão artificial.</p>
         </article>
       </section>
 
       <section class="view" id="view-milena">
         <div class="page-intro">
-          <div><span class="eyebrow orange">GESTÃO</span><h2>Milena precisa saber onde olhar — não receber mais um relatório.</h2><p>O painel resume apenas padrões úteis para coaching e melhoria do atendimento.</p></div>
+          <div><span class="eyebrow orange">GESTÃO</span><h2>Milena vê comportamento, não um segundo CRM.</h2><p>Coaching, padrões da equipe e templates oficiais do RD Conversas em uma única área.</p></div>
+        </div>
+        <div class="subnav" id="milenaTabs" role="tablist">
+          <button class="active" data-milena="visao">Visão</button>
+          <button data-milena="atendentes">Atendentes</button>
+          <button data-milena="templates">Templates RD</button>
         </div>
         <div id="milenaPanel"></div>
       </section>
 
       <section class="view" id="view-base">
         <div class="page-intro base-head">
-          <div><span class="eyebrow orange">CONHECIMENTO</span><h2>Base ULTRA</h2><p>Fatos oficiais, dúvidas frequentes e cenários já estruturados.</p></div>
+          <div><span class="eyebrow orange">CONHECIMENTO</span><h2>Base ULTRA</h2><p>Fatos confirmados, dúvidas frequentes e cenários para consulta rápida.</p></div>
           <input id="baseSearch" class="search" placeholder="Buscar: preço, medo, endereço, prótese...">
         </div>
         <div class="base-tabs" role="tablist">
@@ -114,6 +114,12 @@
     </main>
   </div>
 
+  <div class="modal-backdrop" id="templateModal" aria-hidden="true">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="templateModalTitle">
+      <button class="modal-close" id="templateModalClose" aria-label="Fechar">×</button>
+      <div id="templateModalContent"></div>
+    </div>
+  </div>
   <div class="toast" id="toast" role="status"></div>
   <script type="module" src="app.js"></script>
 </body>
