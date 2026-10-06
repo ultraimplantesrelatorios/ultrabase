@@ -1,135 +1,28 @@
-# ULTRA BASE v5 — Método ULTRA
+# ULTRA BASE v5.3.0 — Supabase Connected
 
-Versão de teste operacional da Central de Inteligência da Ultra Implantes.
+# ULTRA BASE v5.2.0 — Método ULTRA
 
-## O que esta versão é
+## Publicação no GitHub Pages
+Extraia o ZIP e envie **o conteúdo interno** para a raiz do repositório. O arquivo `index.html` deve aparecer na raiz, ao lado de `styles.css`, `ultra-core-v5.2.js` e `app-v5.2.js`.
 
-A ULTRA BASE v5 é um copiloto local de atendimento e uma camada de inteligência complementar ao RD. Ela não tenta substituir o CRM. O foco é:
+Depois publique pelo GitHub Pages normalmente. Acesse primeiro `/health.html` e confirme `ULTRA BASE v5.2.0`.
 
-- entender a fala antes de classificar;
-- reconhecer familiar/terceiro e evitar falar com a pessoa errada;
-- separar fato de inferência;
-- responder fatos institucionais diretamente;
-- tolerar erros comuns de escrita;
-- sugerir uma próxima melhor ação;
-- preservar limites clínicos;
-- mostrar à Milena padrões úteis de conversa e coaching;
-- disponibilizar 12 templates oficiais para RD Conversas.
+## Por que esta versão é mais robusta
+A v5.2 não precisa carregar uma cadeia de módulos ES para iniciar. O Copiloto usa dois scripts clássicos versionados e traz os dados essenciais embutidos no runtime. Isso reduz drasticamente falhas por arquivo ausente, cache antigo, MIME incorreto ou caminho de módulo quebrado.
 
-## Navegação
+## Arquivos principais
+- `index.html`: interface.
+- `styles.css`: visual responsivo.
+- `ultra-core-v5.2.js`: entendimento, roteamento, respostas, memória e templates.
+- `app-v5.2.js`: interface e ações.
+- `health.html`: teste de publicação.
+- `tests/run-v5.2.cjs`: gate automatizado.
 
-### Copiloto
-Cole a fala da pessoa. A saída padrão mostra:
+## Regra de memória
+**Análise não é evento. Sugestão não é ação. Só algo confirmado como real altera o histórico operacional.**
 
-- resposta sugerida;
-- próxima melhor ação;
-- o que registrar no RD;
-- atenção clínica quando necessária.
 
-A análise detalhada fica recolhida para não poluir o atendimento.
+## Banco conectado
+Esta release usa Supabase Auth + Postgres via `supabase-v5.3.js`, sem SDK externo no caminho crítico. A configuração de frontend contém somente Project URL e Publishable Key. Nunca adicionar `sb_secret_`, `service_role` ou senha do banco ao repositório.
 
-A memória funciona apenas durante a sessão atual do navegador. Use **Nova conversa** ao trocar de paciente/contexto.
-
-### Inteligência
-Recebe opcionalmente CSV de conversas e procura padrões. Sem autoria confiável, não atribui desempenho a uma atendente.
-
-### Milena
-Possui três áreas:
-
-- **Visão:** oportunidades de coaching;
-- **Atendentes:** leitura individual somente quando houver autoria confiável;
-- **Templates RD:** 12 templates, com propósito, categoria sugerida, variáveis, regras de uso e status local.
-
-### Base
-Consulta rápida de fatos, FAQ e cenários.
-
-## Arquitetura
-
-```text
-index.html
-styles.css
-app.js
-
-lib/
-  engine.js
-  intent-router.js
-  context-extractor.js
-  semantic-check.js
-  normalizer.js
-  conversation-memory.js
-  next-best-action.js
-  pre-send.js
-  csv.js
-  insights.js
-  storage.js
-
-data/
-  ultra-facts.js
-  ultra-facts.json
-  knowledge.js
-  dental-language.json
-  rd-templates.json
-  scenarios.json
-
-tests/
-  run-all.mjs
-  context.test.mjs
-  router.test.mjs
-  engine.test.mjs
-  templates.test.mjs
-  adversarial.test.mjs
-  static.test.mjs
-```
-
-## Testar antes de publicar
-
-Requer Node 22+.
-
-```bash
-npm test
-```
-
-O workflow do GitHub Pages também executa os testes e valida a sintaxe JavaScript antes de publicar. Se os testes falharem, o deploy não acontece.
-
-## Publicar no GitHub Pages
-
-1. Suba **o conteúdo da pasta** para a raiz do repositório.
-2. Confirme que `.github/workflows/deploy-pages.yml` existe.
-3. Em **Settings → Pages**, selecione **GitHub Actions** como fonte.
-4. Faça commit/push na branch `main`.
-5. Aguarde o workflow **Test and Deploy ULTRA BASE v5**.
-6. Teste `/health.html` depois do deploy.
-
-## O que ainda NÃO é produção clínica multiusuário
-
-Esta versão é estática e local-first. Não colocar tokens do RD, senhas ou credenciais no frontend/GitHub Pages.
-
-Para:
-
-- login;
-- múltiplos usuários;
-- sincronização entre computadores;
-- integração automática com RD;
-- armazenamento de dados identificáveis/sensíveis;
-
-é necessário backend seguro, controle de acesso, logs e governança LGPD.
-
-## Dados institucionais pendentes
-
-A base marca como pendente o que ainda não deve ser afirmado automaticamente, incluindo:
-
-- estacionamento;
-- acessibilidade;
-- formas de pagamento específicas;
-- horários de sábado/especiais.
-
-## Regra de evolução
-
-Não corrigir exemplos isolados com hacks. Toda falha deve virar:
-
-1. regra de compreensão;
-2. teste de regressão;
-3. correção do motor;
-4. novo teste adversarial.
-
-Isso é o que mantém a ULTRA BASE ficando mais inteligente sem perder estabilidade.
+Primeiro acesso: confirme o administrador com `SUPABASE_PRECHECK.sql`, publique os arquivos na raiz do GitHub Pages e entre com o usuário criado em Authentication.

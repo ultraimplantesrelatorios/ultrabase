@@ -1,0 +1,2 @@
+const files=['./context.test.mjs','./router.test.mjs','./engine.test.mjs','./templates.test.mjs','./static.test.mjs','./adversarial.test.mjs','./memory-v2.test.mjs','./ui-memory-contract.test.mjs','./supabase-integration.test.mjs'];
+let failed=0;for(const f of files){try{await import(f)}catch(e){failed++;console.error(`FAIL ${f}\n${e.stack||e}`)}}if(failed){console.error(`${failed} suite(s) failed`);process.exit(1)}console.log(`ALL ${files.length} SUITES PASSED`);

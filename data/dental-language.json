@@ -1,0 +1,18 @@
+{
+  "version":"5.0.0",
+  "purpose":"Vocabulário popular e variações úteis para entendimento; nunca define tratamento sozinho.",
+  "terms":[
+    {"term":"pino","possible_meanings":["implante dentário","componente protético","termo leigo inespecífico"]},
+    {"term":"parafuso","possible_meanings":["implante dentário","componente protético","termo leigo inespecífico"]},
+    {"term":"dente preso","possible_meanings":["prótese fixa","protocolo","coroa sobre implante"]},
+    {"term":"dente fixo","possible_meanings":["prótese fixa","protocolo","coroa sobre implante"]},
+    {"term":"dentadura fixa","possible_meanings":["prótese protocolo","reabilitação fixa"]},
+    {"term":"chapa","possible_meanings":["prótese removível","dentadura"]},
+    {"term":"ponte","possible_meanings":["prótese fixa","ponte sobre dentes","ponte sobre implantes"]},
+    {"term":"osso fraco","possible_meanings":["percepção de pouca disponibilidade óssea","osteoporose","fala leiga inespecífica"]},
+    {"term":"sem osso","possible_meanings":["relato de atrofia óssea","fala recebida após outra avaliação"]},
+    {"term":"gengiva sumiu","possible_meanings":["recessão gengival","perda de volume percebida","fala leiga inespecífica"]},
+    {"term":"tirar tudo","possible_meanings":["extrações múltiplas","insatisfação geral","fala emocional que exige contexto"]},
+    {"term":"trocar tudo","possible_meanings":["reabilitação ampla","troca de prótese","fala inespecífica"]}
+  ]
+}

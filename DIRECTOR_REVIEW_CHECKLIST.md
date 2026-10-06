@@ -1,6 +1,6 @@
 # CHECKLIST DE APROVAÇÃO — DIRETORIA TÉCNICA
 
-Use este documento para homologar a ULTRA BASE v5.
+Use este documento para homologar a ULTRA BASE v5.1.
 
 ## 1. Clínica / Responsável técnico
 
@@ -41,7 +41,7 @@ Use este documento para homologar a ULTRA BASE v5.
 - [ ] Workflow bloqueia deploy quando teste falha.
 - [ ] Service Worker está versionado.
 - [ ] Não existem credenciais no frontend.
-- [ ] Health check retorna v5.0.0.
+- [ ] Health check retorna v5.1.0.
 
 ## 6. Casos críticos para homologação manual
 
@@ -65,3 +65,14 @@ Testar no Copiloto:
 16. to sangrando muito
 
 Toda reprovação deve virar novo teste antes da próxima publicação.
+
+
+## Memória V2 — aprovação obrigatória
+- [ ] Sugestão de pergunta não aparece como pergunta enviada sem confirmação.
+- [ ] Sugestão de resposta não aparece como resposta enviada sem confirmação.
+- [ ] Ação sugerida não aparece como realizada sem confirmação.
+- [ ] Texto editado é o texto registrado.
+- [ ] Nova mensagem mantém o contexto.
+- [ ] Limpar campo mantém o contexto.
+- [ ] Nova conversa zera totalmente o paciente anterior.
+- [ ] Fatos, inferências e lacunas aparecem separados.

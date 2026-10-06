@@ -8,7 +8,7 @@
   <link rel="icon" href="assets/ultra-icon.png">
   <link rel="manifest" href="manifest.webmanifest">
   <link rel="stylesheet" href="styles.css">
-  <title>ULTRA BASE v5</title>
+  <title>ULTRA BASE v5.3</title>
 </head>
 <body>
   <a class="skip-link" href="#main">Pular para o conteúdo</a>
@@ -17,7 +17,7 @@
       <div class="brand">
         <img src="assets/ultra-logo.png" alt="Ultra Implantes">
         <span>ULTRA BASE</span>
-        <small>Método ULTRA · v5</small>
+        <small>Método ULTRA · v5.3</small>
       </div>
       <nav class="nav" id="nav">
         <button class="nav-btn active" data-view="copiloto"><span>✦</span><b>Copiloto</b></button>
@@ -36,8 +36,8 @@
         <button id="menuBtn" class="mobile-menu" aria-label="Abrir menu">☰</button>
         <div><div class="eyebrow">ULTRA IMPLANTES</div><h1 id="pageTitle">Copiloto</h1></div>
         <div class="top-actions">
-          <button class="ghost small" id="newConversationBtn" title="Limpa apenas a memória desta conversa">Nova conversa</button>
-          <div class="top-status"><i></i><span>Memória da sessão ativa</span></div>
+          <button class="ghost small danger-soft" id="newConversationBtn" title="Encerra o contexto atual e inicia outro paciente">Nova conversa</button>
+          <div class="top-status" id="dbStatus"><i></i><span>Conectando...</span></div><button class="ghost small" id="accountBtn">Conta</button>
         </div>
       </header>
 
@@ -60,6 +60,7 @@
               <div><label for="agentName">Atendente <span>opcional</span></label><input id="agentName" autocomplete="off"></div>
             </div>
             <button class="primary full" id="analyzeBtn">Gerar orientação</button>
+            <div class="composer-actions"><button class="secondary" id="nextMessageBtn">Nova mensagem do paciente</button><button class="ghost" id="clearComposerBtn">Limpar campo</button></div>
             <div class="quick-examples" aria-label="Exemplos rápidos">
               <button data-example="vcs atendem convenio?">Convênio</button>
               <button data-example="meu tio precisa colocar um dente">Familiar</button>
@@ -73,6 +74,7 @@
             <div class="empty-state"><div class="spark">✦</div><strong>Pronta para orientar.</strong><p>Respostas curtas por fora. Contexto, segurança e lógica por dentro.</p></div>
           </article>
         </div>
+        <article class="panel conversation-context" id="conversationContext" aria-live="polite"></article>
       </section>
 
       <section class="view" id="view-inteligencia">
@@ -120,7 +122,28 @@
       <div id="templateModalContent"></div>
     </div>
   </div>
+  <div class="auth-backdrop" id="authBackdrop" aria-hidden="true">
+    <div class="auth-card">
+      <img src="assets/ultra-logo.png" alt="Ultra Implantes">
+      <span class="eyebrow orange">ACESSO SEGURO</span>
+      <h2>Entrar na ULTRA BASE</h2>
+      <p>Use o usuário criado pela administração. A senha não é armazenada pela ULTRA BASE.</p>
+      <label>E-mail<input id="loginEmail" type="email" autocomplete="username" placeholder="nome@ultraimplantes.com.br"></label>
+      <label>Senha<input id="loginPassword" type="password" autocomplete="current-password" placeholder="Sua senha"></label>
+      <button class="primary full" id="loginBtn">Entrar</button>
+      <div class="auth-error" id="authError" role="alert"></div>
+      <small>Banco Supabase protegido por autenticação e RLS.</small>
+    </div>
+  </div>
+  <div class="modal-backdrop" id="accountModal" aria-hidden="true">
+    <div class="modal account-modal" role="dialog" aria-modal="true" aria-labelledby="accountTitle">
+      <button class="modal-close" id="accountClose" aria-label="Fechar">×</button>
+      <div id="accountContent"></div>
+    </div>
+  </div>
   <div class="toast" id="toast" role="status"></div>
-  <script type="module" src="app.js"></script>
+  <script defer src="ultra-core-v5.2.js"></script>
+  <script defer src="supabase-v5.3.js"></script>
+  <script defer src="app-v5.3.js"></script>
 </body>
 </html>

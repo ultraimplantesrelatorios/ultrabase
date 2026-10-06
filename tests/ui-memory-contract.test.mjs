@@ -1,0 +1,11 @@
+import fs from 'node:fs';
+import path from 'node:path';
+import {ok} from './assert.mjs';
+const root=path.resolve(new URL('..',import.meta.url).pathname);
+const html=fs.readFileSync(path.join(root,'index.html'),'utf8');
+const app=fs.readFileSync(path.join(root,'app-v5.3.js'),'utf8');
+for(const id of ['clearComposerBtn','nextMessageBtn','newConversationBtn','conversationContext']) ok(html.includes(`id="${id}"`),`missing UI control ${id}`);
+for(const token of ['function clearComposer()','function nextMessage()','async function newConversation()','C.confirmAnswer','C.confirmQuestion','C.confirmAction','renderMemoryPanel','syncMemory']) ok(app.includes(token),`missing behavior ${token}`);
+ok(!app.includes('mergeMemory('),'legacy mergeMemory must not be used by UI');
+ok(app.includes("window.confirm('Iniciar uma nova conversa?"),'new conversation must require confirmation');
+console.log('ui-memory-contract.test: PASS');

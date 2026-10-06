@@ -1,0 +1,44 @@
+[
+  {
+    "id": "address",
+    "status": "CONFIRMADO",
+    "value": "Rua Dr. Antônio José Luciano, 263, Centro, Osasco – SP, CEP 06010-110",
+    "source": "Site oficial Ultra Implantes"
+  },
+  {
+    "id": "hours",
+    "status": "CONFIRMADO_PARCIAL",
+    "value": "Segunda a sexta, 08h–18h; sábado e horários especiais precisam de confirmação",
+    "source": "Site oficial Ultra Implantes"
+  },
+  {
+    "id": "whatsapp",
+    "status": "CONFIRMADO",
+    "value": "(11) 96178-0712",
+    "source": "Site oficial Ultra Implantes"
+  },
+  {
+    "id": "insurance",
+    "status": "CONFIRMADO",
+    "value": "Atendimento particular",
+    "source": "Contexto Mestre Ultra"
+  },
+  {
+    "id": "parking",
+    "status": "PENDENTE",
+    "value": null,
+    "source": "Validação interna necessária"
+  },
+  {
+    "id": "accessibility",
+    "status": "PENDENTE",
+    "value": null,
+    "source": "Validação interna necessária"
+  },
+  {
+    "id": "payment",
+    "status": "A_VALIDAR",
+    "value": null,
+    "source": "Política comercial vigente"
+  }
+]
